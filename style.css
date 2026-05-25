@@ -1,0 +1,13 @@
+.contened{
+    background-color: cornflowerblue;
+    padding: 20px 70px 20px 70px;
+    text-align: center;
+}
+.parra{
+    border: 5px solid black;
+}
+.contened h1{
+    border: 5px solid white;
+    display: inline-block;
+
+}
