@@ -1,0 +1,21 @@
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    width: 150px;
+    height: auto;
+}
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-right: 400px;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0 40px 0 0;
+    padding: 0;
+}
