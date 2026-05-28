@@ -1,0 +1,411 @@
+:root {
+  --psymind-ink: #e5eefc;
+  --psymind-muted: #91a4c2;
+  --psymind-surface: rgba(15, 23, 42, 0.74);
+  --psymind-surface-strong: rgba(15, 23, 42, 0.9);
+  --psymind-line: rgba(148, 163, 184, 0.16);
+  --psymind-primary: #8dd6ff;
+  --psymind-primary-soft: rgba(141, 214, 255, 0.14);
+  --psymind-accent: #9b8cff;
+  --psymind-accent-soft: rgba(155, 140, 255, 0.14);
+  --psymind-warm: #f5b971;
+  --psymind-radius-xl: 1.5rem;
+  --psymind-radius-lg: 1rem;
+  --psymind-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+  --psymind-font: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--psymind-font);
+  color: var(--psymind-ink);
+  background:
+    radial-gradient(circle at 15% 15%, rgba(141, 214, 255, 0.16), transparent 22%),
+    radial-gradient(circle at 85% 12%, rgba(155, 140, 255, 0.14), transparent 20%),
+    radial-gradient(circle at 50% 80%, rgba(245, 185, 113, 0.08), transparent 26%),
+    linear-gradient(180deg, #050814 0%, #0a1020 42%, #050814 100%);
+  padding-top: 82px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  backdrop-filter: blur(20px);
+  background: rgba(5, 8, 20, 0.72) !important;
+}
+
+.navbar-brand img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.navbar .nav-link {
+  color: rgba(229, 238, 252, 0.78);
+  font-weight: 600;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #fff;
+}
+
+.hero-section,
+.content-section,
+.cta-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section {
+  padding: 5.5rem 0 4rem;
+}
+
+.hero-badge,
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(141, 214, 255, 0.12);
+  color: var(--psymind-primary);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.hero-title,
+.section-title {
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.hero-title {
+  font-size: clamp(2.6rem, 5vw, 4.8rem);
+  max-width: 11ch;
+}
+
+.section-title {
+  font-size: clamp(2rem, 3vw, 3.2rem);
+}
+
+.hero-lead,
+.section-lead {
+  color: var(--psymind-muted);
+  font-size: 1.07rem;
+  line-height: 1.8;
+}
+
+.hero-card,
+.service-card,
+.feature-card,
+.testimonial-card,
+.info-card,
+.post-card,
+.contact-card,
+.map-card {
+  border: 1px solid var(--psymind-line);
+  border-radius: var(--psymind-radius-xl);
+  background: var(--psymind-surface);
+  backdrop-filter: blur(22px);
+  box-shadow: var(--psymind-shadow);
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 100%;
+}
+
+.hero-glow {
+  position: absolute;
+  inset: auto auto 8% 10%;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(141, 214, 255, 0.22), transparent 68%);
+  filter: blur(4px);
+}
+
+.nebula-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.9), transparent 82%);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.floating-chip {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: rgba(5, 8, 20, 0.78);
+  border: 1px solid var(--psymind-line);
+  box-shadow: 0 18px 30px rgba(15, 23, 42, 0.08);
+  font-weight: 700;
+}
+
+.floating-chip.top {
+  top: 1rem;
+  right: 1rem;
+}
+
+.floating-chip.bottom {
+  left: 1rem;
+  bottom: 1rem;
+}
+
+.section-padding {
+  padding: 4.5rem 0;
+}
+
+.section-soft {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.04));
+}
+
+.service-icon,
+.social-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(141, 214, 255, 0.14);
+  color: var(--psymind-primary);
+}
+
+.service-card,
+.feature-card,
+.testimonial-card,
+.info-card,
+.post-card,
+.contact-card,
+.map-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.service-card:hover,
+.feature-card:hover,
+.testimonial-card:hover,
+.info-card:hover,
+.post-card:hover,
+.contact-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(141, 214, 255, 0.24);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.32);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.08);
+  color: var(--psymind-ink);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.metric {
+  padding: 1rem 1.1rem;
+  border-radius: 1rem;
+  background: rgba(5, 8, 20, 0.72);
+  border: 1px solid var(--psymind-line);
+}
+
+.metric strong {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.gradient-panel {
+  background: linear-gradient(135deg, rgba(6, 10, 24, 0.92), rgba(27, 38, 72, 0.9) 52%, rgba(40, 23, 83, 0.94));
+  color: #fff;
+}
+
+.gradient-panel .btn-light {
+  color: #08101f;
+}
+
+.btn {
+  border-radius: 999px;
+  font-weight: 700;
+  padding-inline: 1.2rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--psymind-primary), #5bb6ff);
+  border-color: transparent;
+  color: #06101e;
+  box-shadow: 0 16px 30px rgba(91, 182, 255, 0.18);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #b0e2ff, #6db9ff);
+  color: #06101e;
+}
+
+.btn-outline-primary {
+  border-color: rgba(141, 214, 255, 0.3);
+  color: var(--psymind-primary);
+}
+
+.btn-outline-primary:hover {
+  background: rgba(141, 214, 255, 0.14);
+  color: #fff;
+}
+
+.text-primary {
+  color: var(--psymind-primary) !important;
+}
+
+.text-secondary,
+.text-muted {
+  color: var(--psymind-muted) !important;
+}
+
+.text-white-weak {
+  color: rgba(229, 238, 252, 0.76) !important;
+}
+
+.bg-soft-primary {
+  background: var(--psymind-primary-soft);
+}
+
+.bg-soft-accent {
+  background: var(--psymind-accent-soft);
+}
+
+.footer {
+  background: rgba(5, 8, 20, 0.94);
+  color: rgba(229, 238, 252, 0.76);
+}
+
+.footer a {
+  color: rgba(229, 238, 252, 0.76);
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+.footer .border-top {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-control,
+.form-select {
+  border-radius: 0.9rem;
+  border-color: rgba(148, 163, 184, 0.18);
+  padding: 0.85rem 1rem;
+  background: rgba(5, 8, 20, 0.72);
+  color: var(--psymind-ink);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: rgba(141, 214, 255, 0.55);
+  box-shadow: 0 0 0 0.2rem rgba(141, 214, 255, 0.12);
+  background: rgba(5, 8, 20, 0.9);
+  color: var(--psymind-ink);
+}
+
+.form-control::placeholder {
+  color: rgba(229, 238, 252, 0.46);
+}
+
+.avatar {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.post-image {
+  border-top-left-radius: var(--psymind-radius-xl);
+  border-top-right-radius: var(--psymind-radius-xl);
+}
+
+.map-frame {
+  width: 100%;
+  min-height: 360px;
+  border: 0;
+  border-radius: var(--psymind-radius-xl);
+}
+
+.nav-pills .nav-link,
+.badge {
+  border-radius: 999px;
+}
+
+.badge.text-bg-primary,
+.badge.text-bg-success,
+.badge.text-bg-warning {
+  background: rgba(141, 214, 255, 0.16) !important;
+  color: #d9f0ff !important;
+}
+
+.article-shell {
+  background: rgba(5, 8, 20, 0.76);
+  border: 1px solid var(--psymind-line);
+  border-radius: 2rem;
+  box-shadow: var(--psymind-shadow);
+}
+
+.hero-card img,
+.post-card img,
+.feature-card img,
+.testimonial-card img {
+  filter: saturate(1.1) contrast(1.02);
+}
+
+@media (max-width: 991.98px) {
+  body {
+    padding-top: 76px;
+  }
+
+  .hero-section {
+    padding-top: 3rem;
+  }
+
+  .hero-title {
+    max-width: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .section-padding {
+    padding: 3.5rem 0;
+  }
+
+  .hero-title {
+    font-size: clamp(2.1rem, 12vw, 3rem);
+  }
+}

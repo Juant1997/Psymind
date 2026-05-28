@@ -1,66 +1,217 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Psymind</title>
-    <link rel="stylesheet" href="estilos/encabezado.css" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="assets/images/favicon/favicon.png"
-    />
+    <meta name="description" content="Psymind es un blog moderno sobre mente humana, conciencia, emociones, energía, percepción y misterio interior." />
+    <meta name="keywords" content="mente humana, conciencia, emociones, universo, energía, percepción, autoconocimiento, filosofía" />
+    <meta name="theme-color" content="#050814" />
+    <meta property="og:title" content="Psymind | Blog de mente, conciencia y misterio" />
+    <meta property="og:description" content="Una experiencia digital inmersiva dedicada al descubrimiento de la mente y el universo interior." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/img/hero-illustration.svg" />
+    <title>Psymind | Blog de mente, conciencia y misterio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="assets/images/favicon/favicon.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <header class="encabezado">
-      <img src="assets/images/logo.png" alt="Psymind Logo" class="logo"/>
-      <h1>Psymind</h1>
-      <nav aria-label="Main navigation">
-        <ul>
-          <li><a href="acerca.html">A cerca de</a></li>
-          <li><a href="servicios.html">Servicios</a></li>
-        </ul>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="Ir al inicio de Psymind">
+            <img src="assets/images/logo.png" alt="Logo de Psymind" />
+            <div class="d-flex flex-column lh-sm">
+              <span class="fw-bold text-white">Psymind</span>
+              <small class="text-white-weak">Mente, universo y conciencia</small>
+            </div>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Abrir navegación">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+              <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link" href="acerca-de.html">Acerca de</a></li>
+              <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+              <li class="nav-item"><a class="nav-link" href="archivo.html">Archivo</a></li>
+              <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+              <li class="nav-item ms-lg-3"><a class="btn btn-primary" href="blog.html">Explorar lecturas</a></li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </header>
+
     <main>
-      <article>
-        <header>
-          <h1>Article Title</h1>
-          <p>
-            Published on <time datetime="2024-10-14">October 14, 2024</time>
-          </p>
-        </header>
+      <section class="hero-section position-relative">
+        <div class="nebula-grid"></div>
+        <div class="container position-relative" data-parallax>
+          <div class="row align-items-center g-5">
+            <div class="col-lg-7 reveal">
+              <span class="hero-badge mb-3"><i class="bi bi-stars"></i> Descubrimiento mental y espiritual</span>
+              <h1 class="hero-title mb-4">Un blog para mirar la mente como si fuera un universo vivo.</h1>
+              <p class="hero-lead mb-4">Psymind reúne curiosidades sobre emociones, conciencia, energía, percepción y el misterio de ser humanos en un lenguaje íntimo, moderno y reflexivo.</p>
+              <div class="d-flex flex-wrap gap-3 mb-4">
+                <a class="btn btn-primary btn-lg" href="blog.html">Entrar al archivo</a>
+                <a class="btn btn-outline-primary btn-lg" href="acerca-de.html">Conocer la filosofía</a>
+              </div>
+              <ul class="tag-list mb-0">
+                <li>Conciencia</li>
+                <li>Misterio</li>
+                <li>Energía</li>
+                <li>Autoconocimiento</li>
+              </ul>
+            </div>
+            <div class="col-lg-5 reveal">
+              <div class="hero-card p-3 p-md-4 position-relative overflow-hidden">
+                <div class="hero-glow"></div>
+                <img src="assets/img/hero-illustration.svg" alt="Ilustración abstracta de mente y cosmos" class="img-fluid rounded-4" />
+                <div class="floating-chip top"><i class="bi bi-brilliance text-primary"></i> ideas que flotan</div>
+                <div class="floating-chip bottom"><i class="bi bi-moon-stars text-primary"></i> silencio, símbolo y profundidad</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section>
-          <h2>First Section</h2>
-          <p>Content that relates to this section...</p>
-        </section>
+      <section class="section-padding section-soft">
+        <div class="container">
+          <div class="row align-items-end mb-4 gy-3">
+            <div class="col-lg-8 reveal">
+              <span class="section-badge mb-3"><i class="bi bi-lightning-charge"></i> Artículos destacados</span>
+              <h2 class="section-title mb-3">Lecturas que cruzan mente, símbolo y universo interior.</h2>
+              <p class="section-lead mb-0">Una selección editorial para entrar por intuición, curiosidad o una pregunta que todavía no tiene nombre.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end reveal">
+              <a class="btn btn-outline-primary" href="blog.html">Ver todos los artículos</a>
+            </div>
+          </div>
+          <div class="row g-4">
+            <div class="col-lg-7 reveal">
+              <article class="post-card h-100 overflow-hidden">
+                <img src="assets/img/blog-balance.svg" alt="Imagen abstracta sobre equilibrio interior" class="img-fluid post-image" loading="lazy" />
+                <div class="p-4 p-md-5">
+                  <span class="badge text-bg-primary mb-3">Conciencia</span>
+                  <p class="text-secondary small mb-2"><i class="bi bi-calendar3"></i> 14 de octubre de 2024</p>
+                  <h3 class="h2">¿Qué ocurre cuando la mente deja de buscar respuestas y comienza a observarse?</h3>
+                  <p class="text-secondary">Un ensayo visual sobre percepción, silencio mental y la sensación de mirar hacia dentro como si el pensamiento tuviera profundidad física.</p>
+                  <a href="blog-posts/mirada-interior.html" class="fw-bold text-primary">Leer artículo <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </article>
+            </div>
+            <div class="col-lg-5 reveal d-grid gap-4">
+              <article class="post-card overflow-hidden">
+                <div class="p-4 p-md-5">
+                  <span class="badge text-bg-warning mb-3">Universo</span>
+                  <h3 class="h4">La extraña relación entre energía, emoción y percepción</h3>
+                  <p class="text-secondary">Una lectura breve sobre cómo interpretamos el mundo desde la vibración interna de cada estado emocional.</p>
+                  <a href="blog-posts/energia-y-percepcion.html" class="fw-bold text-primary">Explorar <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </article>
+              <article class="post-card overflow-hidden">
+                <div class="p-4 p-md-5">
+                  <span class="badge text-bg-success mb-3">Mente</span>
+                  <h3 class="h4">Leyes mentales: intuiciones modernas sobre enfoque y realidad</h3>
+                  <p class="text-secondary">No como doctrina, sino como mapa simbólico para pensar el poder de la atención y la intención.</p>
+                  <a href="blog-posts/leyes-mentales.html" class="fw-bold text-primary">Explorar <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section>
-          <h2>Second Section</h2>
-          <p>More related content...</p>
-        </section>
-      </article>
+      <section class="section-padding">
+        <div class="container">
+          <div class="row mb-4">
+            <div class="col-lg-8 reveal">
+              <span class="section-badge mb-3"><i class="bi bi-grid-3x3-gap"></i> Categorías</span>
+              <h2 class="section-title mb-3">Temas para navegar la mente desde distintas puertas.</h2>
+            </div>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-4 col-lg-3 reveal"><article class="info-card p-4 h-100 text-center"><i class="bi bi-heart-pulse fs-2 text-primary"></i><h3 class="h5 mt-3">Emociones</h3><p class="text-secondary mb-0">Paisajes internos, memoria afectiva y matices del sentir.</p></article></div>
+            <div class="col-md-4 col-lg-3 reveal"><article class="info-card p-4 h-100 text-center"><i class="bi bi-globe2 fs-2 text-primary"></i><h3 class="h5 mt-3">Universo</h3><p class="text-secondary mb-0">Mente, cosmos, símbolo y la intuición de lo infinito.</p></article></div>
+            <div class="col-md-4 col-lg-3 reveal"><article class="info-card p-4 h-100 text-center"><i class="bi bi-brain fs-2 text-primary"></i><h3 class="h5 mt-3">Conciencia</h3><p class="text-secondary mb-0">Atención, presencia y el misterio de darse cuenta.</p></article></div>
+            <div class="col-md-4 col-lg-3 reveal"><article class="info-card p-4 h-100 text-center"><i class="bi bi-battery-charging fs-2 text-primary"></i><h3 class="h5 mt-3">Energía</h3><p class="text-secondary mb-0">Vibración cotidiana, ritmo mental y estados internos.</p></article></div>
+            <div class="col-md-4 col-lg-3 reveal"><article class="info-card p-4 h-100 text-center"><i class="bi bi-person-lines-fill fs-2 text-primary"></i><h3 class="h5 mt-3">Comportamiento</h3><p class="text-secondary mb-0">Patrones humanos, impulso, costumbre y contraste.</p></article></div>
+            <div class="col-md-4 col-lg-3 reveal"><article class="info-card p-4 h-100 text-center"><i class="bi bi-infinity fs-2 text-primary"></i><h3 class="h5 mt-3">Leyes mentales</h3><p class="text-secondary mb-0">Lenguaje simbólico para pensar foco, intención y creación.</p></article></div>
+            <div class="col-md-4 col-lg-3 reveal"><article class="info-card p-4 h-100 text-center"><i class="bi bi-lightbulb fs-2 text-primary"></i><h3 class="h5 mt-3">Autoconocimiento</h3><p class="text-secondary mb-0">Preguntas para verse desde una distancia más honesta.</p></article></div>
+            <div class="col-md-4 col-lg-3 reveal"><article class="info-card p-4 h-100 text-center"><i class="bi bi-cpu fs-2 text-primary"></i><h3 class="h5 mt-3">Inteligencia</h3><p class="text-secondary mb-0">Pensamiento, criterio, intuición y lenguaje mental.</p></article></div>
+          </div>
+        </div>
+      </section>
 
-      <aside>
-        <h2>Related Links</h2>
-        <nav aria-label="Related articles">
-          <ul>
-            <li><a href="/related-1">First related article</a></li>
-            <li><a href="/related-2">Second related article</a></li>
-          </ul>
-        </nav>
-      </aside>
+      <section class="section-padding section-soft">
+        <div class="container">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-6 reveal">
+              <div class="article-shell p-4 p-md-5">
+                <span class="section-badge mb-3"><i class="bi bi-sparkles"></i> Filosofía de Psymind</span>
+                <h2 class="section-title mb-3">Pensar la mente como una frontera entre la emoción y el cosmos.</h2>
+                <p class="section-lead mb-0">Este espacio nace para mirar lo humano desde la curiosidad: sin fórmulas rígidas, sin solemnidad vacía y con la calma de quien observa una constelación por primera vez.</p>
+              </div>
+            </div>
+            <div class="col-lg-6 reveal">
+              <div class="hero-card p-4 p-md-5">
+                <img src="assets/img/about-visual.svg" alt="Ilustración abstracta de una constelación de ideas" class="img-fluid rounded-4" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer>
-      <p>&copy; 2024 Your Site Name. All rights reserved.</p>
-      <nav aria-label="Footer links">
-        <ul>
-          <li><a href="/privacy">Privacy Policy</a></li>
-          <li><a href="/contact">Contact Us</a></li>
-        </ul>
-      </nav>
+    <footer class="footer pt-5 pb-4 mt-4">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <a class="d-inline-flex align-items-center gap-2 mb-3" href="index.html">
+              <img src="assets/images/logo.png" alt="Logo de Psymind" width="40" height="40" />
+              <span class="h5 text-white mb-0">Psymind</span>
+            </a>
+            <p class="mb-3 text-white-weak">Un archivo de lecturas sobre mente, conciencia, energía y el misterio de estar vivos.</p>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h2 class="h6 text-white">Sitio</h2>
+            <ul class="list-unstyled d-grid gap-2 mb-0">
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="acerca-de.html">Acerca de</a></li>
+              <li><a href="archivo.html">Archivo</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-3">
+            <h2 class="h6 text-white">Temas</h2>
+            <ul class="list-unstyled d-grid gap-2 mb-0">
+              <li>Conciencia</li>
+              <li>Universo interior</li>
+              <li>Emociones</li>
+              <li>Misterios de la mente</li>
+            </ul>
+          </div>
+          <div class="col-lg-3">
+            <h2 class="h6 text-white">Síguenos</h2>
+            <div class="d-flex gap-2">
+              <a class="social-icon" href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a class="social-icon" href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a class="social-icon" href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="border-top mt-4 pt-3 d-flex flex-column flex-md-row justify-content-between gap-2 small">
+          <span>© <span data-current-year></span> Psymind.</span>
+          <span>Diseño inmersivo, oscuro y reflexivo.</span>
+        </div>
+      </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
