@@ -115,6 +115,9 @@ a {
   backdrop-filter: blur(22px);
   box-shadow: var(--psymind-shadow);
 }
+.img-dios {   
+  height: 200px;    
+}
 
 .hero-visual {
   position: relative;

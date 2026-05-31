@@ -29,7 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinks.forEach((link) => {
       link.addEventListener("click", () => {
         if (window.innerWidth < 992 && navCollapse.classList.contains("show")) {
-          const bootstrapCollapse = window.bootstrap?.Collapse.getInstance(navCollapse);
+          const bootstrapCollapse =
+            window.bootstrap?.Collapse.getInstance(navCollapse);
           bootstrapCollapse?.hide();
         }
       });
@@ -87,17 +88,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     countObserver.observe(stat);
   });
-
-  const parallaxLayer = document.querySelector("[data-parallax]");
-  if (parallaxLayer) {
-    window.addEventListener(
-      "mousemove",
-      (event) => {
-        const x = (event.clientX / window.innerWidth - 0.5) * 12;
-        const y = (event.clientY / window.innerHeight - 0.5) * 12;
-        parallaxLayer.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-      },
-      { passive: true },
-    );
-  }
 });
