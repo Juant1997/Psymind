@@ -48,16 +48,63 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const forms = document.querySelectorAll(".needs-validation");
-  forms.forEach((form) => {
-    form.addEventListener("submit", (event) => {
-      if (!form.checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
+
+forms.forEach((form) => {
+  form.addEventListener("submit", async (event) => {
+
+    event.preventDefault();
+
+    if (!form.checkValidity()) {
+      event.stopPropagation();
+      form.classList.add("was-validated");
+      return;
+    }
+
+    const messageBox = document.getElementById("form-message");
+
+    try {
+
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+
+        messageBox.innerHTML = `
+          <div class="alert alert-success">
+            ¡Gracias! Tu mensaje fue enviado correctamente.
+          </div>
+        `;
+
+        form.reset();
+        form.classList.remove("was-validated");
+
+      } else {
+
+        messageBox.innerHTML = `
+          <div class="alert alert-danger">
+            Ocurrió un error al enviar el mensaje.
+          </div>
+        `;
+
       }
 
-      form.classList.add("was-validated");
-    });
+    } catch (error) {
+
+      messageBox.innerHTML = `
+        <div class="alert alert-danger">
+          No se pudo conectar con el servidor.
+        </div>
+      `;
+
+    }
+
   });
+});
 
   const stats = document.querySelectorAll("[data-count]");
   stats.forEach((stat) => {
@@ -85,7 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { threshold: 0.4 },
     );
-
     countObserver.observe(stat);
   });
 });

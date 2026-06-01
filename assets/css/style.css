@@ -388,7 +388,10 @@ a {
 .testimonial-card img {
   filter: saturate(1.1) contrast(1.02);
 }
-
+.gifi {
+  display: block;
+  margin: auto;
+}
 @media (max-width: 991.98px) {
   body {
     padding-top: 76px;
