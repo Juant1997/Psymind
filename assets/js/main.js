@@ -47,62 +47,53 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", updateShadow, { passive: true });
   }
 
-  const forms = document.querySelectorAll(".needs-validation");
-
+const forms = document.querySelectorAll(".needs-validation");
 forms.forEach((form) => {
   form.addEventListener("submit", async (event) => {
-
     event.preventDefault();
-
-    if (!form.checkValidity()) {
-      event.stopPropagation();
+    if (!form.checkValidity()) {      
       form.classList.add("was-validated");
       return;
     }
-
     const messageBox = document.getElementById("form-message");
-
+    messageBox.innerHTML = `
+      <div class="alert alert-info">
+        Enviando mensaje...
+      </div>
+      `;
     try {
-
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: new FormData(form),
+    const formData = new FormData(form);
+    const response = await fetch("https://formspree.io/f/xjgzqggn", {
+        method: "POST",
+        body: formData,
         headers: {
           Accept: "application/json"
         }
       });
-
       if (response.ok) {
-
         messageBox.innerHTML = `
           <div class="alert alert-success">
             ¡Gracias! Tu mensaje fue enviado correctamente.
           </div>
         `;
-
         form.reset();
         form.classList.remove("was-validated");
-
       } else {
-
+        const errorData = await response.json();
         messageBox.innerHTML = `
           <div class="alert alert-danger">
-            Ocurrió un error al enviar el mensaje.
+            Error: ${errorData.error || 'No se pudo enviar tu mensaje'}
           </div>
         `;
-
       }
-
     } catch (error) {
-
+     console.error("Error :", error);
       messageBox.innerHTML = `
         <div class="alert alert-danger">
           No se pudo conectar con el servidor.
         </div>
       `;
-
     }
-
   });
 });
 
