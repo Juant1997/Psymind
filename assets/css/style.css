@@ -119,6 +119,11 @@ a {
   height: 200px;    
 }
 
+.perspective {
+  width: 100%;
+  height: 25%;
+}
+
 .hero-visual {
   position: relative;
   min-height: 100%;
