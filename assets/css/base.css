@@ -1,0 +1,56 @@
+:root {
+  --psymind-ink: #e5eefc;
+  --psymind-muted: #91a4c2;
+  --psymind-surface: rgba(15, 23, 42, 0.74);
+  --psymind-surface-strong: rgba(15, 23, 42, 0.9);
+  --psymind-line: rgba(148, 163, 184, 0.16);
+  --psymind-primary: #8dd6ff;
+  --psymind-primary-soft: rgba(141, 214, 255, 0.14);
+  --psymind-accent: #9b8cff;
+  --psymind-accent-soft: rgba(155, 140, 255, 0.14);
+  --psymind-warm: #f5b971;
+  --psymind-radius-xl: 1.5rem;
+  --psymind-radius-lg: 1rem;
+  --psymind-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+  --psymind-font: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--psymind-font);
+  color: var(--psymind-ink);
+  background:
+    radial-gradient(circle at 15% 15%, rgba(141, 214, 255, 0.16), transparent 22%),
+    radial-gradient(circle at 85% 12%, rgba(155, 140, 255, 0.14), transparent 20%),
+    radial-gradient(circle at 50% 80%, rgba(245, 185, 113, 0.08), transparent 26%),
+    linear-gradient(180deg, #050814 0%, #0a1020 42%, #050814 100%);
+  padding-top: 82px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-primary {
+  color: var(--psymind-primary) !important;
+}
+
+.text-secondary,
+.text-muted {
+  color: var(--psymind-muted) !important;
+}
+
+.text-white-weak {
+  color: rgba(229, 238, 252, 0.76) !important;
+}
+
+.bg-soft-primary {
+  background: var(--psymind-primary-soft);
+}
+
+.bg-soft-accent {
+  background: var(--psymind-accent-soft);
+}
