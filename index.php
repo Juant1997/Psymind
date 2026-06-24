@@ -47,7 +47,9 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <header data-component="header" data-base="./" data-active="index.html"></header>
+    <!-- header con php -->
+     <?php $activePage = 'index.php'; ?> 
+     <?php include 'components/header.php'; ?>
 
     <main>
       <section class="hero-section position-relative">
@@ -68,10 +70,10 @@
                 moderno y reflexivo.
               </p>
               <div class="d-flex flex-wrap gap-3 mb-4">
-                <a class="btn btn-primary btn-lg" href="blog.html"
+                <a class="btn btn-primary btn-lg" href="blog.php"
                   >Entrar al archivo</a
                 >
-                <a class="btn btn-outline-primary btn-lg" href="acerca-de.html"
+                <a class="btn btn-outline-primary btn-lg" href="acerca-de.php"
                   >Conocer la filosofía</a
                 >
               </div>
@@ -122,7 +124,7 @@
               </p>
             </div>
             <div class="col-lg-4 text-lg-end reveal">
-              <a class="btn btn-outline-primary" href="blog.html"
+              <a class="btn btn-outline-primary" href="blog.php"
                 >Ver todos los artículos</a
               >
             </div>
@@ -151,7 +153,7 @@
                     tuviera profundidad física.
                   </p>
                   <a
-                    href="blog-posts/mirada-interior.html"
+                    href="blog-posts/mirada-interior.php"
                     class="fw-bold text-primary"
                     >Leer artículo <i class="bi bi-arrow-right"></i
                   ></a>
@@ -159,8 +161,33 @@
               </article>
             </div>
             <div class="col-lg-5 reveal d-grid gap-4">
-              <div data-component="post-card" data-base="./" data-field-image="" data-field-alt="" data-field-badge="<span class='badge text-bg-warning mb-3'>Universo</span>" data-field-date="" data-field-title="La extraña relación entre energía, emoción y percepción" data-field-description="Una lectura breve sobre cómo interpretamos el mundo desde la vibración interna de cada estado emocional." data-field-link="blog-posts/energia-y-percepcion.html" data-field-link-text="Explorar"></div>
-              <div data-component="post-card" data-base="./" data-field-image="" data-field-alt="" data-field-badge="<span class='badge text-bg-success mb-3'>Mente</span>" data-field-date="" data-field-title="Leyes mentales: intuiciones modernas sobre enfoque y realidad" data-field-description="No como doctrina, sino como mapa simbólico para pensar el poder de la atención y la intención." data-field-link="blog-posts/leyes-mentales.html" data-field-link-text="Explorar"></div>
+
+<!-- componente post-card con php -->
+
+            <?php
+            $image = "";
+            $alt = "";
+            $badge = "<span class='badge text-bg-warning mb-3'>Universo</span>";
+            $date = "";
+            $title = "La extraña relación entre energía, emoción y percepción";
+            $description = "Una lectura breve sobre cómo interpretamos el mundo desde la vibración interna de cada estado emocional.";
+            $link = "blog-posts/energia-y-percepcion.php";
+            $link_text = "Explorar";
+            include 'components/post-card.php';
+            ?>
+
+            <?php
+            $image = "";
+            $alt = "";
+            $badge = "<span class='badge text-bg-success mb-3'>Mente</span>";
+            $date = "";
+            $title = "Leyes mentales: intuiciones modernas sobre enfoque y realidad";
+            $description = "No como doctrina, sino como mapa simbólico para pensar el poder de la atención y la intención.";
+            $link = "blog-posts/leyes-mentales.php";
+            $link_text = "Explorar";
+            include 'components/post-card.php';
+            ?>
+      
             </div>
           </div>
         </div>
@@ -179,14 +206,87 @@
             </div>
           </div>
           <div class="row g-4">
-            <div class="col-md-4 col-lg-3 reveal"><div data-component="info-card" data-base="./" data-field-icon="<i class='bi bi-heart-pulse fs-2 text-primary'></i>" data-field-title="Emociones" data-field-description="Paisajes internos, memoria afectiva y matices del sentir."></div></div>
-            <div class="col-md-4 col-lg-3 reveal"><div data-component="info-card" data-base="./" data-field-icon="<i class='bi bi-globe2 fs-2 text-primary'></i>" data-field-title="Universo" data-field-description="Mente, cosmos, símbolo y la intuición de lo infinito."></div></div>
-            <div class="col-md-4 col-lg-3 reveal"><div data-component="info-card" data-base="./" data-field-icon="<i class='bi bi-brain fs-2 text-primary'></i>" data-field-title="Conciencia" data-field-description="Atención, presencia y el misterio de darse cuenta."></div></div>
-            <div class="col-md-4 col-lg-3 reveal"><div data-component="info-card" data-base="./" data-field-icon="<i class='bi bi-battery-charging fs-2 text-primary'></i>" data-field-title="Energía" data-field-description="Vibración cotidiana, ritmo mental y estados internos."></div></div>
-            <div class="col-md-4 col-lg-3 reveal"><div data-component="info-card" data-base="./" data-field-icon="<i class='bi bi-person-lines-fill fs-2 text-primary'></i>" data-field-title="Comportamiento" data-field-description="Patrones humanos, impulso, costumbre y contraste."></div></div>
-            <div class="col-md-4 col-lg-3 reveal"><div data-component="info-card" data-base="./" data-field-icon="<i class='bi bi-infinity fs-2 text-primary'></i>" data-field-title="Leyes mentales" data-field-description="Lenguaje simbólico para pensar foco, intención y creación."></div></div>
-            <div class="col-md-4 col-lg-3 reveal"><div data-component="info-card" data-base="./" data-field-icon="<i class='bi bi-lightbulb fs-2 text-primary'></i>" data-field-title="Autoconocimiento" data-field-description="Preguntas para verse desde una distancia más honesta."></div></div>
-            <div class="col-md-4 col-lg-3 reveal"><div data-component="info-card" data-base="./" data-field-icon="<i class='bi bi-cpu fs-2 text-primary'></i>" data-field-title="Inteligencia" data-field-description="Pensamiento, criterio, intuición y lenguaje mental."></div></div>
+
+          <!-- componente info-card con php -->
+           <div class="col-md-4 col-lg-3 reveal">
+           <?php
+            $icon = "<i class='bi bi-heart-pulse fs-2 text-primary'></i>";
+            $title = "Emociones";
+            $description = "Paisajes internos, memoria afectiva y matices del sentir.";
+            include 'components/info-card.php';
+            ?>
+           </div>
+
+           <!-- componente info-card con php -->
+            <div class="col-md-4 col-lg-3 reveal">
+            <?php
+            $icon = "<i class='bi bi-globe2 fs-2 text-primary'></i>";
+            $title = "Universo";
+            $description = "Mente, cosmos, símbolo y la intuición de lo infinito.";
+            include 'components/info-card.php';
+            ?>
+            </div>
+
+            <!-- componente info-card con php -->
+            <div class="col-md-4 col-lg-3 reveal">
+            <?php
+            $icon = "<i class='bi bi-brain fs-2 text-primary'></i>";
+            $title = "Conciencia";
+            $description = "Atención, presencia y el misterio de darse cuenta.";
+            include 'components/info-card.php';
+            ?>
+            </div>
+
+            <!-- componente info-card con php -->
+            <div class="col-md-4 col-lg-3 reveal">
+            <?php
+            $icon = "<i class='bi bi-battery-charging fs-2 text-primary'></i>";
+            $title = "Energía";
+            $description = "Vibración cotidiana, ritmo mental y estados internos.";
+            include 'components/info-card.php';
+            ?>
+            </div>
+
+            <!-- componente info-card con php -->
+            <div class="col-md-4 col-lg-3 reveal">
+            <?php
+            $icon = "<i class='bi bi-person-lines-fill fs-2 text-primary'></i>";
+            $title = "Comportamiento";
+            $description = "Patrones humanos, impulso, costumbre y contraste.";
+            include 'components/info-card.php';
+            ?>
+            </div>
+
+            <!-- componente info-card con php -->
+            <div class="col-md-4 col-lg-3 reveal">
+            <?php
+            $icon = "<i class='bi bi-infinity fs-2 text-primary'></i>";
+            $title = "Leyes mentales";
+            $description = "Lenguaje simbólico para pensar foco, intención y creación.";
+            include 'components/info-card.php';
+            ?>
+            </div>
+
+            <!-- componente info-card con php -->
+            <div class="col-md-4 col-lg-3 reveal">
+            <?php
+            $icon = "<i class='bi bi-lightbulb fs-2 text-primary'></i>";
+            $title = "Autoconocimiento";
+            $description = "Preguntas para verse desde una distancia más honesta.";
+            include 'components/info-card.php';
+            ?>
+            </div>
+
+            <!-- componente info-card con php -->
+            <div class="col-md-4 col-lg-3 reveal">
+            <?php
+            $icon = "<i class='bi bi-cpu fs-2 text-primary'></i>";
+            $title = "Inteligencia";
+            $description = "Pensamiento, criterio, intuición y lenguaje mental.";
+            include 'components/info-card.php';
+            ?>
+            </div>
+
           </div>
         </div>
       </section>
@@ -223,8 +323,8 @@
         </div>
       </section>
     </main>
-
-    <footer data-component="footer" data-base="./"></footer>
+    <!-- footer con php -->
+    <?php include 'components/footer.php'; ?>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

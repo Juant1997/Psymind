@@ -15,7 +15,11 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <header data-component="header" data-base="./" data-active="contacto.html"></header>
+
+    <!-- header con php -->
+     <?php $activePage = 'contacto.php'; ?>
+     <?php include 'components/header.php'; ?>
+
 
     <main>
       <section class="hero-section position-relative">
@@ -28,7 +32,13 @@
               <p class="hero-lead">Este espacio es para colaboraciones, notas y pequeñas señales. Nada de formularios rígidos, solo una línea abierta entre lectores y archivo.</p>
             </div>
             <div class="col-lg-5 reveal">
-              <div data-component="hero-media" data-base="./" data-field-image="assets/img/contacto.png" data-field-alt="Ilustración abstracta para la sección de contacto"></div>
+            <!-- Hero-media con php -->
+            <?php
+              $image = "assets/img/contacto.png";
+              $alt = "Ilustración abstracta para la sección de contacto";
+              include 'components/hero-media.php';
+            ?>
+
             </div>
           </div>
         </div>
@@ -86,7 +96,8 @@
       </section>
     </main>
 
-    <footer data-component="footer" data-base="./"></footer>
+    <!-- footer con php -->
+    <?php include 'components/footer.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="/assets/js/main.js"></script>

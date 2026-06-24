@@ -15,8 +15,10 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <header data-component="header" data-base="./" data-active="acerca-de.html"></header>
-
+    <!-- header con php -->
+     <?php $activePage = 'acerca-de.php'; ?>
+     <?php include 'components/header.php'; ?>
+    
     <main>
       <section class="hero-section position-relative">
         <div class="nebula-grid"></div>
@@ -40,14 +42,42 @@
       <section class="section-padding section-soft">
         <div class="container">
           <div class="row g-4">
-            <div class="col-lg-4 reveal"><div data-component="info-card" data-base="./" data-field-icon="" data-field-title="Historia" data-field-description="El proyecto nació como una idea para reunir preguntas que normalmente quedan sueltas: qué sentimos, cómo pensamos y por qué ciertas imágenes nos persiguen."></div></div>
-            <div class="col-lg-4 reveal"><div data-component="info-card" data-base="./" data-field-icon="" data-field-title="Misión" data-field-description="Crear piezas editoriales que combinen estética, profundidad y calma, para leer la mente con una mirada curiosa y no mecánica."></div></div>
-            <div class="col-lg-4 reveal"><div data-component="info-card" data-base="./" data-field-icon="" data-field-title="Visión" data-field-description="Convertirse en un espacio digital de referencia para quienes buscan ideas sobre conciencia, autoconocimiento y el misterio de existir."></div></div>
-          </div>
-        </div>
-      </section>
 
-      <section class="section-padding">
+          <!-- Info-cards con php -->
+          <div class="col-lg-4 reveal">
+            <?php
+            $icon = "";
+            $title = "Historia";
+            $description = "El proyecto nació como una idea para reunir preguntas que normalmente quedan sueltas: qué sentimos, cómo pensamos y por qué ciertas imágenes nos persiguen.";
+            include 'components/info-card.php';
+            ?>
+          </div>
+
+          <!-- Info-cards con php -->
+          <div class="col-lg-4 reveal">
+            <?php
+            $icon = "";
+            $title = "Misión";
+            $description = "Crear piezas editoriales que combinen estética, profundidad y calma, para leer la mente con una mirada curiosa y no mecánica.";
+            include 'components/info-card.php';
+            ?>
+          </div>
+
+          <!-- Info-cards con php -->
+          <div class="col-lg-4 reveal">
+            <?php
+            $icon = "";
+            $title = "Visión";
+            $description = "Convertirse en un espacio digital de referencia para quienes buscan ideas sobre conciencia, autoconocimiento y el misterio de existir.";
+            include 'components/info-card.php';
+            ?>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding">
         <div class="container">
           <div class="row g-4 align-items-center">
             <div class="col-lg-6 reveal">
@@ -71,8 +101,8 @@
         </div>
       </section>
     </main>
-
-    <footer data-component="footer" data-base="./"></footer>
+    <!-- footer con php -->
+    <?php include 'components/footer.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="/assets/js/main.js"></script>
