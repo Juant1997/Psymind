@@ -15,9 +15,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <!-- header con php -->
-     <?php $activePage = 'archivo.php'; ?>
-     <?php include 'components/header.php'; ?>
+    <header data-component="header" data-base="./" data-active="archivo.html"></header>
 
     <main>
       <section class="hero-section position-relative">
@@ -30,12 +28,7 @@
               <p class="hero-lead">Si el blog es una conversación, este archivo es la constelación de sus rutas: mente, emociones, universo, conciencia y energía.</p>
             </div>
             <div class="col-lg-5 reveal">
-            <!-- Hero-media con php -->
-             <?php
-             $image = "assets/img/blog-growth.svg";
-             $alt = "Ilustración abstracta del archivo temático";
-             include 'components/hero-media.php';
-             ?>
+              <div data-component="hero-media" data-base="./" data-field-image="assets/img/blog-growth.svg" data-field-alt="Ilustración abstracta del archivo temático"></div>
             </div>
           </div>
         </div>
@@ -44,69 +37,18 @@
       <section class="section-padding section-soft">
         <div class="container">
           <div class="row g-4">
-
-          <!-- Feature-card con php -->
-          <div class="col-md-6 col-lg-4 reveal">
-            <?php
-            $title = "Mente";
-            $description = "Pensamiento, intuición y percepción.";
-            include 'components/feature-card.php';
-            ?>
-          </div>
-
-          <!-- Feature-card con php -->
-          <div class="col-md-6 col-lg-4 reveal">
-            <?php
-            $title = "Emociones";
-            $description = "Paisajes internos y memoria afectiva.";
-            include 'components/feature-card.php';
-            ?>
-          </div>
-
-          <!-- Feature-card con php -->
-          <div class="col-md-6 col-lg-4 reveal">
-            <?php
-            $title = "Universo";
-            $description = "Símbolo, cosmos y asombro.";
-            include 'components/feature-card.php';
-            ?>
-          </div>
-
-          <!-- Feature-card con php -->
-          <div class="col-md-6 col-lg-4 reveal">
-            <?php
-            $title = "Conciencia";
-            $description = "Presencia, observación y lucidez.";
-            include 'components/feature-card.php';
-            ?>
-          </div>
-
-          <!-- Feature-card con php -->
-          <div class="col-md-6 col-lg-4 reveal">
-            <?php
-            $title = "Energía";
-            $description = "Ritmo, vibración y resonancia.";
-            include 'components/feature-card.php';
-            ?>
-          </div>
-
-          <!-- Feature-card con php -->
-          <div class="col-md-6 col-lg-4 reveal">
-            <?php
-            $title = "Leyes mentales";
-            $description = "Foco, intención y relatos de realidad.";
-            include 'components/feature-card.php';
-            ?>
-          </div>
-
+            <div class="col-md-6 col-lg-4 reveal"><div data-component="feature-card" data-base="./" data-field-title="Mente" data-field-description="Pensamiento, intuición y percepción."></div></div>
+            <div class="col-md-6 col-lg-4 reveal"><div data-component="feature-card" data-base="./" data-field-title="Emociones" data-field-description="Paisajes internos y memoria afectiva."></div></div>
+            <div class="col-md-6 col-lg-4 reveal"><div data-component="feature-card" data-base="./" data-field-title="Universo" data-field-description="Símbolo, cosmos y asombro."></div></div>
+            <div class="col-md-6 col-lg-4 reveal"><div data-component="feature-card" data-base="./" data-field-title="Conciencia" data-field-description="Presencia, observación y lucidez."></div></div>
+            <div class="col-md-6 col-lg-4 reveal"><div data-component="feature-card" data-base="./" data-field-title="Energía" data-field-description="Ritmo, vibración y resonancia."></div></div>
+            <div class="col-md-6 col-lg-4 reveal"><div data-component="feature-card" data-base="./" data-field-title="Leyes mentales" data-field-description="Foco, intención y relatos de realidad."></div></div>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- footer con php -->
-    <?php include 'components/footer.php'; ?>
-
+    <footer data-component="footer" data-base="./"></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="/assets/js/main.js"></script>
