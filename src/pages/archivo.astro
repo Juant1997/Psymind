@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeroMedia from "../components/HeroMedia.astro";
+import FeatureCard from "../components/FeatureCard.astro";
+---
+
+<Layout
+  title="Archivo | Psymind"
+  description="Archivo de Psymind: categorías y rutas de lectura sobre mente, conciencia, universo y energía."
+  activePage="/archivo"
+>
+  <section class="hero-section position-relative">
+    <div class="nebula-grid"></div>
+    <div class="container position-relative">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7 reveal">
+          <span class="hero-badge mb-3"><i class="bi bi-collection"></i> Archivo temático</span>
+          <h1 class="hero-title mb-3">Un mapa para entrar por el tema que más resuene.</h1>
+          <p class="hero-lead">Si el blog es una conversación, este archivo es la constelación de sus rutas: mente, emociones, universo, conciencia y energía.</p>
+        </div>
+        <div class="col-lg-5 reveal">
+          <HeroMedia image="/assets/img/archivo.png" alt="Ilustración abstracta del archivo temático" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding section-soft">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 reveal"><FeatureCard title="Mente" description="Pensamiento, intuición y percepción." /></div>
+        <div class="col-md-6 col-lg-4 reveal"><FeatureCard title="Emociones" description="Paisajes internos y memoria afectiva." /></div>
+        <div class="col-md-6 col-lg-4 reveal"><FeatureCard title="Universo" description="Símbolo, cosmos y asombro." /></div>
+        <div class="col-md-6 col-lg-4 reveal"><FeatureCard title="Conciencia" description="Presencia, observación y lucidez." /></div>
+        <div class="col-md-6 col-lg-4 reveal"><FeatureCard title="Energía" description="Ritmo, vibración y resonancia." /></div>
+        <div class="col-md-6 col-lg-4 reveal"><FeatureCard title="Leyes mentales" description="Foco, intención y relatos de realidad." /></div>
+      </div>
+    </div>
+  </section>
+</Layout>

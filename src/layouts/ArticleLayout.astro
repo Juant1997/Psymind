@@ -1,0 +1,40 @@
+---
+import Layout from "./Layout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  badgeText: string;
+  badgeVariant?: string;
+  date: string;
+  dateISO: string;
+  image: string;
+  imageAlt: string;
+}
+
+const {
+  title,
+  description,
+  badgeText,
+  badgeVariant = "primary",
+  date,
+  dateISO,
+  image,
+  imageAlt,
+} = Astro.props;
+---
+
+<Layout title={`${title} | Psymind`} description={description} activePage="/blog">
+  <div class="container py-5">
+    <article class="mx-auto article-shell p-4 p-md-5" style="max-width: 860px;">
+      <a class="btn btn-outline-primary mb-4" href="/blog"><i class="bi bi-arrow-left"></i> Volver al blog</a>
+      <header class="mb-4">
+        <span class={`badge text-bg-${badgeVariant} mb-3`}>{badgeText}</span>
+        <h1 class="display-5 fw-bold">{title}</h1>
+        <p class="text-secondary mb-0">Publicado el <time datetime={dateISO}>{date}</time></p>
+      </header>
+      <img src={image} alt={imageAlt} class="img-fluid rounded-4 mb-4" />
+      <slot />
+    </article>
+  </div>
+</Layout>

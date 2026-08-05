@@ -1,0 +1,23 @@
+@media (max-width: 991.98px) {
+  body {
+    padding-top: 76px;
+  }
+
+  .hero-section {
+    padding-top: 3rem;
+  }
+
+  .hero-title {
+    max-width: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .section-padding {
+    padding: 3.5rem 0;
+  }
+
+  .hero-title {
+    font-size: clamp(2.1rem, 12vw, 3rem);
+  }
+}

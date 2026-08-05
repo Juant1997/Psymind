@@ -1,0 +1,12 @@
+---
+interface Props {
+  image: string;
+  alt?: string;
+}
+
+const { image, alt = "" } = Astro.props;
+---
+
+<div class="hero-card p-4">
+  <img src={image} alt={alt} class="img-fluid rounded-4 w-100" />
+</div>

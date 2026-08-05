@@ -1,0 +1,64 @@
+---
+interface Props {
+  current?: string;
+}
+
+const { current = "" } = Astro.props;
+
+const navLinks = [
+  { href: "/", label: "Inicio", match: "/" },
+  { href: "/acerca-de", label: "Acerca de", match: "/acerca-de" },
+  { href: "/blog", label: "Blog", match: "/blog" },
+  { href: "/archivo", label: "Archivo", match: "/archivo" },
+  { href: "/contacto", label: "Contacto", match: "/contacto" },
+];
+---
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a
+        class="navbar-brand d-flex align-items-center gap-2"
+        href="/"
+        aria-label="Ir al inicio de Psymind"
+      >
+        <img src="/assets/images/logo.png" alt="Logo de Psymind" />
+        <div class="d-flex flex-column lh-sm">
+          <span class="fw-bold text-white">Psymind</span>
+          <small class="text-white-weak">Mente, universo y conciencia</small>
+        </div>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Abrir navegación"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          {
+            navLinks.map((link) => (
+              <li class="nav-item">
+                <a
+                  class:list={["nav-link", { active: current === link.match }]}
+                  href={link.href}
+                  aria-current={current === link.match ? "page" : undefined}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-primary" href="/blog"> Explorar lecturas </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

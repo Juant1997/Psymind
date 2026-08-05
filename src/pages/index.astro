@@ -1,11 +1,131 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import PostCard from "../components/PostCard.astro";
+import InfoCard from "../components/InfoCard.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Psymind | Blog de mente, conciencia y misterio" activePage="/">
+  <section class="hero-section position-relative">
+    <div class="nebula-grid"></div>
+    <div class="container position-relative" data-parallax>
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7 reveal">
+          <span class="hero-badge mb-3"><i class="bi bi-stars"></i> Descubrimiento mental y espiritual</span>
+          <h1 class="hero-title mb-4">Un blog para mirar la mente como si fuera un universo vivo.</h1>
+          <p class="hero-lead mb-4">
+            Psymind reúne curiosidades sobre emociones, conciencia, energía, percepción y el misterio de ser humanos en un lenguaje íntimo, moderno y reflexivo.
+          </p>
+          <div class="d-flex flex-wrap gap-3 mb-4">
+            <a class="btn btn-primary btn-lg" href="/blog">Entrar al archivo</a>
+            <a class="btn btn-outline-primary btn-lg" href="/acerca-de">Conocer la filosofía</a>
+          </div>
+          <ul class="tag-list mb-0">
+            <li>Conciencia</li>
+            <li>Misterio</li>
+            <li>Energía</li>
+            <li>Autoconocimiento</li>
+          </ul>
+        </div>
+        <div class="col-lg-5 reveal">
+          <div class="hero-card p-3 p-md-4 position-relative overflow-hidden">
+            <div class="hero-glow"></div>
+            <img src="/assets/img/la_mano_de_Dios.jpg" alt="Ilustración abstracta de mente y cosmos" class="img-fluid rounded-4 img-dios" />
+            <div class="floating-chip top"><i class="bi bi-brilliance text-primary"></i> ideas que flotan</div>
+            <div class="floating-chip bottom"><i class="bi bi-moon-stars text-primary"></i> silencio, símbolo y profundidad</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding section-soft">
+    <div class="container">
+      <div class="row align-items-end mb-4 gy-3">
+        <div class="col-lg-8 reveal">
+          <span class="section-badge mb-3"><i class="bi bi-lightning-charge"></i> Artículos destacados</span>
+          <h2 class="section-title mb-3">Lecturas que cruzan mente, símbolo y universo interior.</h2>
+          <p class="section-lead mb-0">Una selección editorial para entrar por intuición, curiosidad o una pregunta que todavía no tiene nombre.</p>
+        </div>
+        <div class="col-lg-4 text-lg-end reveal">
+          <a class="btn btn-outline-primary" href="/blog">Ver todos los artículos</a>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-7 reveal">
+          <article class="post-card h-100 overflow-hidden">
+            <img src="/assets/img/conciencia.png" alt="Imagen abstracta sobre equilibrio interior" class="img-fluid post-image" loading="lazy" />
+            <div class="p-4 p-md-5">
+              <span class="badge text-bg-primary mb-3">Conciencia</span>
+              <p class="text-secondary small mb-2"><i class="bi bi-calendar3"></i> 31 de mayo de 2026</p>
+              <h3 class="h2">¿Qué ocurre cuando la mente deja de buscar respuestas y comienza a observarse?</h3>
+              <p class="text-secondary">
+                Un ensayo visual sobre percepción, silencio mental y la sensación de mirar hacia dentro como si el pensamiento tuviera profundidad física.
+              </p>
+              <a href="/blog-posts/mirada-interior" class="fw-bold text-primary">Leer artículo <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-5 reveal d-grid gap-4">
+          <PostCard
+            badgeText="Universo"
+            badgeVariant="warning"
+            title="La extraña relación entre energía, emoción y percepción"
+            description="Una lectura breve sobre cómo interpretamos el mundo desde la vibración interna de cada estado emocional."
+            link="/blog-posts/energia-y-percepcion"
+            linkText="Explorar"
+          />
+          <PostCard
+            badgeText="Mente"
+            badgeVariant="success"
+            title="Leyes mentales: intuiciones modernas sobre enfoque y realidad"
+            description="No como doctrina, sino como mapa simbólico para pensar el poder de la atención y la intención."
+            link="/blog-posts/leyes-mentales"
+            linkText="Explorar"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-lg-8 reveal">
+          <span class="section-badge mb-3"><i class="bi bi-grid-3x3-gap"></i> Categorías</span>
+          <h2 class="section-title mb-3">Temas para navegar la mente desde distintas puertas.</h2>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 col-lg-3 reveal"><InfoCard icon="bi-heart-pulse" title="Emociones" description="Paisajes internos, memoria afectiva y matices del sentir." /></div>
+        <div class="col-md-4 col-lg-3 reveal"><InfoCard icon="bi-globe2" title="Universo" description="Mente, cosmos, símbolo y la intuición de lo infinito." /></div>
+        <div class="col-md-4 col-lg-3 reveal"><InfoCard icon="bi-rocket-takeoff" title="Conciencia" description="Atención, presencia y el misterio de darse cuenta." /></div>
+        <div class="col-md-4 col-lg-3 reveal"><InfoCard icon="bi-battery-charging" title="Energía" description="Vibración cotidiana, ritmo mental y estados internos." /></div>
+        <div class="col-md-4 col-lg-3 reveal"><InfoCard icon="bi-person-lines-fill" title="Comportamiento" description="Patrones humanos, impulso, costumbre y contraste." /></div>
+        <div class="col-md-4 col-lg-3 reveal"><InfoCard icon="bi-infinity" title="Leyes mentales" description="Lenguaje simbólico para pensar foco, intención y creación." /></div>
+        <div class="col-md-4 col-lg-3 reveal"><InfoCard icon="bi-lightbulb" title="Autoconocimiento" description="Preguntas para verse desde una distancia más honesta." /></div>
+        <div class="col-md-4 col-lg-3 reveal"><InfoCard icon="bi-cpu" title="Inteligencia" description="Pensamiento, criterio, intuición y lenguaje mental." /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding section-soft">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6 reveal">
+          <div class="article-shell p-4 p-md-5">
+            <span class="section-badge mb-3"><i class="bi bi-sparkles"></i> Filosofía de Psymind</span>
+            <h2 class="section-title mb-3">Pensar la mente como una frontera entre la emoción y el cosmos.</h2>
+            <p class="section-lead mb-0">
+              Este espacio nace para mirar lo humano desde la curiosidad: sin fórmulas rígidas, sin solemnidad vacía y con la calma de quien observa una constelación por primera vez.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6 reveal">
+          <div class="hero-card p-4 p-md-5">
+            <img src="/assets/img/horus.png" alt="Ilustración abstracta de una constelación de ideas" class="img-fluid rounded-4" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>

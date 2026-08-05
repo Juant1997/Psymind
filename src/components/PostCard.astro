@@ -1,0 +1,40 @@
+---
+interface Props {
+  image?: string;
+  alt?: string;
+  badgeText: string;
+  badgeVariant?: string;
+  date?: string;
+  title: string;
+  description: string;
+  link: string;
+  linkText: string;
+}
+
+const {
+  image,
+  alt = "",
+  badgeText,
+  badgeVariant = "primary",
+  date,
+  title,
+  description,
+  link,
+  linkText,
+} = Astro.props;
+---
+
+<article class="post-card h-100 overflow-hidden">
+  {image && <img src={image} alt={alt} class="img-fluid post-image" loading="lazy" />}
+  <div class="p-4">
+    <span class={`badge text-bg-${badgeVariant} mb-3`}>{badgeText}</span>
+    {date && (
+      <p class="text-secondary small mb-2">
+        <i class="bi bi-calendar3"></i> {date}
+      </p>
+    )}
+    <h2 class="h5">{title}</h2>
+    <p class="text-secondary">{description}</p>
+    <a class="fw-bold text-primary" href={link}>{linkText} <i class="bi bi-arrow-right"></i></a>
+  </div>
+</article>

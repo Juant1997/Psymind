@@ -1,0 +1,101 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeroMedia from "../components/HeroMedia.astro";
+import PostCard from "../components/PostCard.astro";
+import InfoCard from "../components/InfoCard.astro";
+---
+
+<Layout
+  title="Blog | Psymind"
+  description="Blog moderno sobre mente, emociones, universo, conciencia, energía y comportamiento humano."
+  activePage="/blog"
+>
+  <section class="hero-section position-relative">
+    <div class="nebula-grid"></div>
+    <div class="container position-relative">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7 reveal">
+          <span class="hero-badge mb-3"><i class="bi bi-journal-richtext"></i> Revista digital</span>
+          <h1 class="hero-title mb-3">Artículos que observan lo invisible: mente, emoción y cosmos interior.</h1>
+          <p class="hero-lead">Una portada editorial con lenguaje sobrio, profundo y curioso. Pensada para descubrir más que para explicar.</p>
+        </div>
+        <div class="col-lg-5 reveal">
+          <HeroMedia image="/assets/img/gifojo.gif" alt="Ilustración abstracta del blog de Psymind" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding section-soft">
+    <div class="container">
+      <div class="row align-items-end mb-4 gy-3">
+        <div class="col-lg-8 reveal">
+          <span class="section-badge mb-3"><i class="bi bi-folder2-open"></i> Lecturas recientes</span>
+          <h2 class="section-title mb-3">Publicaciones para entrar por intuición, asombro o silencio.</h2>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4 reveal">
+          <PostCard
+            image="/assets/img/blog-focus.svg"
+            alt="Arte abstracto sobre equilibrio interior"
+            badgeText="Conciencia"
+            badgeVariant="primary"
+            date="14 de octubre de 2024"
+            title="La mente cuando se vuelve observadora"
+            description="Un ensayo sobre presencia, percepción y la quietud que aparece cuando el pensamiento deja de correr."
+            link="/blog-posts/mirada-interior"
+            linkText="Leer artículo"
+          />
+        </div>
+        <div class="col-lg-4 reveal">
+          <PostCard
+            image="/assets/img/blog-growth.svg"
+            alt="Arte abstracto sobre energía y crecimiento"
+            badgeText="Energía"
+            badgeVariant="warning"
+            date="2 de noviembre de 2024"
+            title="Energía emocional y percepción cotidiana"
+            description="Una lectura sobre por qué hay días que parecen luminosos y otros densos, aunque el paisaje externo no cambie."
+            link="/blog-posts/energia-y-percepcion"
+            linkText="Leer artículo"
+          />
+        </div>
+        <div class="col-lg-4 reveal">
+          <PostCard
+            image="/assets/img/blog-focus.svg"
+            alt="Arte abstracto sobre intuición y enfoque"
+            badgeText="Mente"
+            badgeVariant="success"
+            date="18 de diciembre de 2024"
+            title="Leyes mentales como mapas simbólicos"
+            description="Más que recetas, son formas de imaginar cómo la atención, la intención y el hábito dialogan con la realidad."
+            link="/blog-posts/leyes-mentales"
+            linkText="Leer artículo"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-lg-8 reveal">
+          <span class="section-badge mb-3"><i class="bi bi-tags"></i> Categorías</span>
+          <h2 class="section-title mb-3">Rutas temáticas para navegar el archivo.</h2>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 col-lg-3 reveal"><InfoCard icon="bi-brain" title="Mente" description="Pensamiento, intuición y percepción." /></div>
+        <div class="col-md-4 col-lg-3 reveal"><InfoCard icon="bi-heart-pulse" title="Emociones" description="Matices internos que cambian el mundo." /></div>
+        <div class="col-md-4 col-lg-3 reveal"><InfoCard icon="bi-globe2" title="Universo" description="Símbolo, cosmos y asombro." /></div>
+        <div class="col-md-4 col-lg-3 reveal"><InfoCard icon="bi-eye" title="Conciencia" description="Presencia, observación y lucidez." /></div>
+        <div class="col-md-4 col-lg-3 reveal"><InfoCard icon="bi-battery-charging" title="Energía" description="Ritmo, vibración y resonancia." /></div>
+        <div class="col-md-4 col-lg-3 reveal"><InfoCard icon="bi-people" title="Comportamiento" description="Patrones humanos, hábitos y contraste." /></div>
+        <div class="col-md-4 col-lg-3 reveal"><InfoCard icon="bi-infinity" title="Leyes mentales" description="Foco, intención y relatos de realidad." /></div>
+        <div class="col-md-4 col-lg-3 reveal"><InfoCard icon="bi-book" title="Filosofía" description="Ideas modernas para mirar lo humano." /></div>
+      </div>
+    </div>
+  </section>
+</Layout>
