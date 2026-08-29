@@ -1,7 +1,14 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import PostCard from "../components/PostCard.astro";
 import InfoCard from "../components/InfoCard.astro";
+
+// Los 3 posts más recientes: el primero se muestra grande, los otros 2 como tarjetas.
+const latestPosts = (await getCollection("blog", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+const [featuredPost, ...restPosts] = latestPosts;
 ---
 
 <Layout title="Psymind | Blog de mente, conciencia y misterio" activePage="/">
@@ -51,37 +58,36 @@ import InfoCard from "../components/InfoCard.astro";
         </div>
       </div>
       <div class="row g-4">
-        <div class="col-lg-7 reveal">
-          <article class="post-card h-100 overflow-hidden">
-            <img src="/assets/img/conciencia.png" alt="Imagen abstracta sobre equilibrio interior" class="img-fluid post-image" loading="lazy" />
-            <div class="p-4 p-md-5">
-              <span class="badge text-bg-primary mb-3">Conciencia</span>
-              <p class="text-secondary small mb-2"><i class="bi bi-calendar3"></i> 31 de mayo de 2026</p>
-              <h3 class="h2">¿Qué ocurre cuando la mente deja de buscar respuestas y comienza a observarse?</h3>
-              <p class="text-secondary">
-                Un ensayo visual sobre percepción, silencio mental y la sensación de mirar hacia dentro como si el pensamiento tuviera profundidad física.
-              </p>
-              <a href="/blog-posts/mirada-interior" class="fw-bold text-primary">Leer artículo <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </article>
-        </div>
+        {featuredPost && (
+          <div class="col-lg-7 reveal">
+            <article class="post-card h-100 overflow-hidden">
+              <img src={featuredPost.data.image} alt={featuredPost.data.imageAlt} class="img-fluid post-image" loading="lazy" />
+              <div class="p-4 p-md-5">
+                <span class={`badge text-bg-${featuredPost.data.badgeVariant} mb-3`}>{featuredPost.data.badgeText}</span>
+                <p class="text-secondary small mb-2">
+                  <i class="bi bi-calendar3"></i>{" "}
+                  {featuredPost.data.date.toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" })}
+                </p>
+                <h3 class="h2">{featuredPost.data.title}</h3>
+                <p class="text-secondary">{featuredPost.data.description}</p>
+                <a href={`/blog-posts/${featuredPost.id}`} class="fw-bold text-primary">Leer artículo <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </article>
+          </div>
+        )}
         <div class="col-lg-5 reveal d-grid gap-4">
-          <PostCard
-            badgeText="Universo"
-            badgeVariant="warning"
-            title="La extraña relación entre energía, emoción y percepción"
-            description="Una lectura breve sobre cómo interpretamos el mundo desde la vibración interna de cada estado emocional."
-            link="/blog-posts/energia-y-percepcion"
-            linkText="Explorar"
-          />
-          <PostCard
-            badgeText="Mente"
-            badgeVariant="success"
-            title="Leyes mentales: intuiciones modernas sobre enfoque y realidad"
-            description="No como doctrina, sino como mapa simbólico para pensar el poder de la atención y la intención."
-            link="/blog-posts/leyes-mentales"
-            linkText="Explorar"
-          />
+          {
+            restPosts.map((post) => (
+              <PostCard
+                badgeText={post.data.badgeText}
+                badgeVariant={post.data.badgeVariant}
+                title={post.data.title}
+                description={post.data.description}
+                link={`/blog-posts/${post.id}`}
+                linkText="Explorar"
+              />
+            ))
+          }
         </div>
       </div>
     </div>

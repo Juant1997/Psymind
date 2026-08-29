@@ -1,0 +1,55 @@
+---
+import { getCollection, render } from "astro:content";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+// 1. Astro llama a esta función en build-time: genera UNA ruta por cada
+//    archivo .md dentro de src/content/blog/ (excluyendo los borradores).
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+// 2. Recibe el post correspondiente a la ruta actual.
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const dateLabel = post.data.date.toLocaleDateString("es-ES", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
+---
+
+<ArticleLayout
+  title={post.data.title}
+  description={post.data.description}
+  badgeText={post.data.badgeText}
+  badgeVariant={post.data.badgeVariant}
+  date={dateLabel}
+  dateISO={post.data.date.toISOString()}
+  image={post.data.image}
+  imageAlt={post.data.imageAlt}
+>
+  <div class="article-body">
+    <Content />
+  </div>
+</ArticleLayout>
+
+<style>
+  /* Hace que el contenido Markdown se vea igual que antes (h2, párrafos, etc.) */
+  .article-body :global(h2) {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+  }
+  .article-body :global(p) {
+    color: var(--psymind-muted);
+  }
+  .article-body :global(section),
+  .article-body :global(p) {
+    margin-bottom: 1rem;
+  }
+</style>

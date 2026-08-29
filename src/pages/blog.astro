@@ -1,8 +1,14 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import HeroMedia from "../components/HeroMedia.astro";
 import PostCard from "../components/PostCard.astro";
 import InfoCard from "../components/InfoCard.astro";
+
+// Trae todos los posts publicados (no borradores) y los ordena del más nuevo al más viejo.
+const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
 ---
 
 <Layout
@@ -35,45 +41,27 @@ import InfoCard from "../components/InfoCard.astro";
         </div>
       </div>
       <div class="row g-4">
-        <div class="col-lg-4 reveal">
-          <PostCard
-            image="/assets/img/blog-focus.svg"
-            alt="Arte abstracto sobre equilibrio interior"
-            badgeText="Conciencia"
-            badgeVariant="primary"
-            date="14 de octubre de 2024"
-            title="La mente cuando se vuelve observadora"
-            description="Un ensayo sobre presencia, percepción y la quietud que aparece cuando el pensamiento deja de correr."
-            link="/blog-posts/mirada-interior"
-            linkText="Leer artículo"
-          />
-        </div>
-        <div class="col-lg-4 reveal">
-          <PostCard
-            image="/assets/img/blog-growth.svg"
-            alt="Arte abstracto sobre energía y crecimiento"
-            badgeText="Energía"
-            badgeVariant="warning"
-            date="2 de noviembre de 2024"
-            title="Energía emocional y percepción cotidiana"
-            description="Una lectura sobre por qué hay días que parecen luminosos y otros densos, aunque el paisaje externo no cambie."
-            link="/blog-posts/energia-y-percepcion"
-            linkText="Leer artículo"
-          />
-        </div>
-        <div class="col-lg-4 reveal">
-          <PostCard
-            image="/assets/img/blog-focus.svg"
-            alt="Arte abstracto sobre intuición y enfoque"
-            badgeText="Mente"
-            badgeVariant="success"
-            date="18 de diciembre de 2024"
-            title="Leyes mentales como mapas simbólicos"
-            description="Más que recetas, son formas de imaginar cómo la atención, la intención y el hábito dialogan con la realidad."
-            link="/blog-posts/leyes-mentales"
-            linkText="Leer artículo"
-          />
-        </div>
+        {
+          posts.map((post) => (
+            <div class="col-lg-4 reveal">
+              <PostCard
+                image={post.data.image}
+                alt={post.data.imageAlt}
+                badgeText={post.data.badgeText}
+                badgeVariant={post.data.badgeVariant}
+                date={post.data.date.toLocaleDateString("es-ES", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+                title={post.data.title}
+                description={post.data.description}
+                link={`/blog-posts/${post.id}`}
+                linkText="Leer artículo"
+              />
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
